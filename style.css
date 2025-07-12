@@ -1,0 +1,153 @@
+/* Background styling */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("assets/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Blur overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px) brightness(0.6);
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 0;
+}
+
+/* Main container */
+.container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 30px;
+  width: 90%;
+  max-width: 600px;
+  color: #ffffff;
+}
+
+/* Heading */
+.container h1 {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* Input section */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.task-input input {
+  flex: 1;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.task-input button {
+  background-color: #28a745;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.task-input button:hover {
+  background-color: #218838;
+}
+
+.task-input .icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Task list styles */
+#task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.task-item.completed .task-desc {
+  text-decoration: line-through;
+  color: #cccccc;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.task-desc {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.task-time {
+  font-size: 0.85em;
+  color: #ddd;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.task-actions .icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.task-actions button:hover .icon {
+  filter: brightness(0.8) invert(0.8);
+}
+
+@media (max-width: 600px) {
+  .task-input {
+    flex-direction: column;
+  }
+
+  .task-input input,
+  .task-input button {
+    width: 100%;
+  }
+}
